@@ -1275,10 +1275,18 @@ if st.button("🔍 Analyze Career Path"):
         for reason in reasons:
             st.write(f"✔ {reason}")
 
-        # -----------------------------
+               # -----------------------------
+                # -----------------------------
         # RESUME SCORE ANALYZER
         # -----------------------------
         score = 0
+
+        found_skills = []
+
+        for skill in skill_database:
+
+            if skill.lower() in final_input.lower():
+                found_skills.append(skill)
 
         if resume_text.strip() != "":
 
@@ -1286,13 +1294,6 @@ if st.button("🔍 Analyze Career Path"):
                 '<div class="section-title">📊 Resume Score Analyzer</div>',
                 unsafe_allow_html=True
             )
-
-            found_skills = []
-
-            for skill in skill_database:
-
-                if skill.lower() in resume_text.lower():
-                    found_skills.append(skill)
 
             score = min(len(found_skills) * 4, 100)
 
