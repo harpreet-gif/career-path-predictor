@@ -1057,7 +1057,7 @@ with col1:
 # -----------------------------
 with col2:
 
-    st.markdown("## 💡 Enter Skills/Interests Manually")
+    st.markdown("## 💡 Enter Skills/Interests")
 
     manual_input = st.text_area(
         "Enter your skills",
